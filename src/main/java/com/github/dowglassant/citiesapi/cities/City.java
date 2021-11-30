@@ -26,11 +26,6 @@ public class City {
 
     private Integer ibge;
 
-    // 1st
-    @Column(name = "lat_lon")
-    private String geolocation;
-
-    // 2nd
     @Type(type = "point")
     @Column(name = "lat_lon", updatable = false, insertable = false)
     private Point location;
@@ -44,7 +39,6 @@ public class City {
         this.name = name;
         this.uf = uf;
         this.ibge = ibge;
-        this.geolocation = geolocation;
         this.location = location;
     }
 
@@ -62,10 +56,6 @@ public class City {
 
     public Integer getIbge() {
         return ibge;
-    }
-
-    public String getGeolocation() {
-        return geolocation;
     }
 
     public Point getLocation() {
